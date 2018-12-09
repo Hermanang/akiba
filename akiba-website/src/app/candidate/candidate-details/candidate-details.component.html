@@ -1,0 +1,96 @@
+<div class="careerfy-wrapper">
+
+        <!-- Navbar content -->
+        <app-navbar></app-navbar>
+        <!-- Navbar content -->
+
+        <!-- Header content -->
+        <app-header></app-header>
+        <!-- Header content -->
+
+        <!-- Main Content -->
+<div class="careerfy-main-content">
+
+        <!-- Main Section -->
+        <div class="careerfy-main-section careerfy-dashboard-fulltwo">
+            <div class="container">
+                <div class="row">
+
+                    <aside class="careerfy-column-4">
+                        <div class="careerfy-typo-wrap">
+                            <div class="jobsearch_candidate_info">
+                                <figure><img src="./assets/extra-images/candidate-thumb-1.jpg" alt=""></figure>
+                                <h2><a href="#">{{ candidate?.last_name }} {{ candidate?.first_name }}</a></h2>
+                                <p>Financial Supervisor at <a href="#">Yup Studio</a></p>
+                                <span>{{ candidate?.addresses?.country }}, {{ candidate?.addresses?.street }}</span>
+                                <small>Member Since, {{ candidate?.created_at | date: 'mediumDate' }}</small>
+                                <ul>
+                                    <li><a href="#" data-original-title="facebook" class="careerfy-icon careerfy-facebook-logo"></a></li>
+                                    <li><a href="#" data-original-title="twitter" class="careerfy-icon careerfy-twitter-logo"></a></li>
+                                    <li><a href="#" data-original-title="linkedin" class="careerfy-icon careerfy-linkedin-button"></a></li>
+                                    <li><a href="#" data-original-title="google-plus" class="careerfy-icon careerfy-google-plus-logo-button"></a></li>
+                                    <li><a href="#" data-original-title="dribbble" class="careerfy-icon careerfy-dribbble-logo"></a></li>
+                                </ul>
+                                <a href="#" class="careerfy-candidate-download-btn"><i class="careerfy-icon careerfy-download-arrow"></i> Download CV</a>
+                            </div>
+
+                        </div>
+                    </aside>
+
+                    <section class="careerfy-column-8">
+                        <div class="careerfy-typo-wrap">
+                            <div class="careerfy-employer-dashboard-nav">
+                                <ul>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <li><a [routerLink]="['./']" routerLinkActive="active" (click)="viewMode ='tab1'"><i class="careerfy-icon careerfy-user"></i>A propos de moi</a></li>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <li ><a [routerLink]="['./']" routerLinkActive="active" (click)="viewMode ='tab2'"><i class="careerfy-icon careerfy-user"></i>Expériences</a></li>
+                                        </div>
+                                    </div>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-slider--container" [ngSwitch]="viewMode">
+                            <div id="tab1" class="tab-slider--body" *ngSwitchCase="'tab1'">
+                                <app-candidate-description [candidate]="candidate"></app-candidate-description>
+                            </div>
+                            <div id="tab2" class="tab-slider--body" *ngSwitchCase="'tab2'">
+                                <app-candidate-experiences [candidate]="candidate"></app-candidate-experiences>
+                            </div>
+                        </div>
+                        <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description | About me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Expériences</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <app-candidate-description [candidate]="candidate"></app-candidate-description>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <app-candidate-experiences [candidate]="candidate"></app-candidate-experiences>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        </div> -->
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <!-- Main Section -->
+
+    </div>
+    <!-- Main Content -->
+
+    </div>

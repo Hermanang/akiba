@@ -1,0 +1,13 @@
+<div class="careerfy-candidate-title"> <h2><i class="careerfy-icon careerfy-social-media"></i> Experince</h2> </div>
+        <div class="careerfy-candidate-timeline">
+            <ul class="careerfy-row" *ngFor="let experience of candidate?.experiences">
+                <li class="careerfy-column-12">
+                    <small>{{ experience?.start_date | date: 'mediumDate' }} - {{ experience?.end_date | date: 'mediumDate' }}</small>
+                    <div class="careerfy-candidate-timeline-text">
+                        <span>{{ experience?.company }}</span>
+                        <h2><a href="#">{{ experience?.title }}</a></h2>
+                        <p>{{ experience?.description }}.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
