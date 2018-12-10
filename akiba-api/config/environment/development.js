@@ -6,10 +6,10 @@
 module.exports = {
     // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/presta-dev'
+    uri: 'mongodb://localhost/akiba-dev'
   },
 
     // Seed database on startup
-  seedDB: false,
+  seedDB: true,
   json_spaces: true
 };

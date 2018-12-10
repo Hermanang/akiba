@@ -11,6 +11,7 @@ import {apiUrl} from './config';
 export default function(app) {
     // Insert routes below
   app.use(`${apiUrl}/profile_user`, require('./api/module_noyau/profile-user'));
+  app.use(`${apiUrl}/job`, require('./api/module_noyau/job'));
   /*app.use(`${apiUrl}/groupe`, require('./api/module_noyau/account_management/group'));
 
   app.use(`${apiUrl}/diplomes`, require('./api/module_noyau/diplomes'));

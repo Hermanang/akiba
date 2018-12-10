@@ -6,12 +6,31 @@
 'use strict';
 import faker from 'faker';
 import ProfileUser from '../api/module_noyau/profile-user/profile-user.model';
-// import Agent from '../api/module_noyau/account_management/agent/agent.model'
+import Job from '../api/module_noyau/job/job.model';
 
 // faker.locale = 'fr'; french
 
 let profileUsers = [];
+let jobs = [];
 for(let i=0; i<10; i++){
+  // For jobs
+  let job_location = {
+    country: faker.address.country(),
+    town: faker.address.city(),
+    street: faker.address.streetAddress()
+  };
+  let job = {
+    entitled: faker.name.jobTitle(),
+    domain: faker.name.jobType(),
+    job_location: job_location,
+    description: faker.lorem.paragraph(),
+    company: faker.company.companyName(),
+    offered_salary: faker.commerce.price(),
+  };
+  // End for jobs
+
+
+  // For profile-use
   let experiences = [];
 
   for(let j=0; j<3; j++){
@@ -55,13 +74,22 @@ for(let i=0; i<10; i++){
   }
 
   profileUsers.push(profile);
+  jobs.push(job);
 }
 
 ProfileUser.find({}).remove()
     .then(() => {
       ProfileUser.create(profileUsers)
     .then(() => {
-        console.log('finished populating Profile user');
+        console.log('finished populating Profile users');
+      });
+    });
+
+Job.find({}).remove()
+    .then(() => {
+      Job.create(jobs)
+    .then(() => {
+        console.log('finished populating Jobs');
       });
     });
 
