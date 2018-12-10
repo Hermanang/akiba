@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { apiUrl } from '../app.constants';
-const url = `http://localhost:9000`;
+
+const apiUrl = `http://localhost:9000/api`;
 @Injectable()
 export class CandidateService {
 
@@ -9,21 +9,21 @@ export class CandidateService {
   constructor(private http: HttpClient) { }
 
   getProfileUsers() {
-    return this.http.get<any>(`http://localhost:9000/api/presta/profile_user`)
+    return this.http.get<any>(`${apiUrl}/presta/profile_user`)
       /*.pipe(
         catchError(this.authService.handleError('getUsers'))
       )*/;
   }
 
   getProfileUser(id) {
-    return this.http.get<any>(`http://localhost:9000/api/presta/profile_user/${id}`)
+    return this.http.get<any>(`${apiUrl}/presta/profile_user/${id}`)
       /*.pipe(
         catchError(this.authService.handleError('getUsers'))
       )*/;
   }
 
   addProfileUser(profileUser) {
-    return this.http.post<any>(`http://localhost:9000/api/presta/profile_user/add`, profileUser)
+    return this.http.post<any>(`${apiUrl}/presta/profile_user/add`, profileUser)
       /*.pipe(
         catchError(this.authService.handleError('getUsers'))
       )*/;
