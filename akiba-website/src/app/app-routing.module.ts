@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'candidates',
-  //   loadChildren: './candidate/candidate.module#CandidateModule'
-  // },
+  {
+    path: 'candidates',
+    loadChildren: './candidate/candidate.module#CandidateModule'
+  },
   {
     path: 'jobs',
     loadChildren: './job/job.module#JobModule'
